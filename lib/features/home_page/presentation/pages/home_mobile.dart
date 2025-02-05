@@ -28,6 +28,7 @@ class HomeMobile extends StatelessWidget {
               bgColor: redProductBlock,
             ),
             SeparatorBlock(),
+            SizedBox(height: 50),
           ],
         ),
       ),

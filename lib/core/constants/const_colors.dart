@@ -11,3 +11,4 @@ const spicesRed = Color.fromRGBO(235, 122, 126, 1);
 const redProductBlock = Color.fromRGBO(237, 28, 36, 1);
 const addIconOrange = Color.fromRGBO(230, 82, 53, 1);
 const tagBgBlueColor = Color.fromRGBO(229, 246, 255, 1);
+const separatorBlocOrange = Color.fromRGBO(254, 75, 2, 1);
