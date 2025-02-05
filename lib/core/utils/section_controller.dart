@@ -14,8 +14,27 @@ class SectionController {
       );
     }
     return ProductsBlock(
-      bgColor: vegetablesGreen,
+      bgColor: checkColor(section.title),
       title: section.title,
     );
+  }
+
+  Color checkColor(String sectionTitle) {
+    switch (sectionTitle) {
+      case 'Fracionados':
+        return vegetablesGreen;
+      case 'Promo':
+        return redProductBlock;
+      case 'Descubra':
+        return discoverBgColor;
+      case 'Frutas':
+        return fruitsGreen;
+      case 'Legumes':
+        return vegetablesGreen;
+      case 'Temperos':
+        return spicesRed;
+      default:
+        return Colors.white;
+    }
   }
 }
