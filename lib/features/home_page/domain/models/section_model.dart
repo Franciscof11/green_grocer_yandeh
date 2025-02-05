@@ -16,7 +16,8 @@ class SectionModel {
       section: map['section'] ?? '',
       description: map['description'] ?? '',
       products: map['products']
-              .map<ProductModel>((product) => ProductModel.fromMap(product)) ??
+              .map<ProductModel>((product) => ProductModel.fromMap(product))
+              .toList() ??
           <ProductModel>[],
     );
   }

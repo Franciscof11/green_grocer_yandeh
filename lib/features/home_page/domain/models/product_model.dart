@@ -27,16 +27,16 @@ class ProductModel {
 
   factory ProductModel.fromMap(Map<String, dynamic> map) {
     return ProductModel(
-      id: map['id'] ?? 0,
+      id: map['id'].toInt() ?? 0,
       name: map['name'] ?? '',
       sku: map['sku'] ?? '',
       category: map['category'] ?? '',
       unitType: map['unitType'] ?? '',
       package: map['package'] ?? '',
       ean: map['ean'] ?? '',
-      unitContent: map['unitContent'] ?? 0,
+      unitContent: map['unitContent'].toInt() ?? 0,
       unitMessure: map['unitMessure'] ?? '',
-      packageQuantity: map['packageQuantity'] ?? 0,
+      packageQuantity: map['packageQuantity'].toInt() ?? 0,
       price: map['price'] ?? '',
     );
   }
