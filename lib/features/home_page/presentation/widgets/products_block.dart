@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:green_grocer_yandeh/core/constants/const_colors.dart';
 import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/product_card.dart';
 
-class ProductsBlocks extends StatelessWidget {
+class ProductsBlock extends StatelessWidget {
   final Color bgColor;
   final String title;
-  const ProductsBlocks({super.key, required this.bgColor, required this.title});
+  const ProductsBlock({super.key, required this.bgColor, required this.title});
 
   @override
   Widget build(BuildContext context) {
