@@ -35,7 +35,7 @@ class HomeWeb extends StatelessWidget {
                       child: Column(
                         children: [
                           SizedBox(height: 16),
-                          SectionsZone(),
+                          SectionsZone(isWeb: true),
                           SizedBox(height: 32),
                           ListView.builder(
                             itemCount: state.sections.length,

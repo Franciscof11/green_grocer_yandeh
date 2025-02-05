@@ -107,7 +107,7 @@ class WebHeader extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25),
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 35, vertical: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                   ),
                 ),
               ],
