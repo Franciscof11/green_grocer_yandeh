@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:green_grocer_yandeh/core/constants/const_colors.dart';
+import 'package:green_grocer_yandeh/features/home_page/data/sections_repository.dart';
 import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/mobile_header.dart';
 import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/products_block.dart';
 import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/sections_zone.dart';
@@ -27,7 +28,20 @@ class HomeMobile extends StatelessWidget {
               title: 'Em promoção',
               bgColor: redProductBlock,
             ),
-            SeparatorBlock(),
+            GestureDetector(
+              onTap: () async {
+                final rep = SectionsRepository();
+                final sections = await rep.getAllSections();
+
+                sections.forEach(
+                  (element) {
+                    print('#################');
+                    print(element.toString());
+                  },
+                );
+              },
+              child: SeparatorBlock(),
+            ),
             SizedBox(height: 50),
           ],
         ),

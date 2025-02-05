@@ -1,5 +1,6 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:green_grocer_yandeh/features/home_page/domain/models/section_model.dart';
 
 class SectionsRepository {
@@ -25,15 +26,15 @@ class SectionsRepository {
       return sectionList;
     } on DioException catch (e) {
       if (e.type == DioExceptionType.badResponse) {
-        debugPrint(
+        log(
           'Server Error: ${e.response?.statusCode} - ${e.response?.statusMessage}',
         );
       } else if (e.type == DioExceptionType.connectionTimeout) {
-        debugPrint('Connection Timeout Error');
+        log('Connection Timeout Error');
       }
       rethrow;
     } catch (e) {
-      debugPrint('Unexpected Error: $e');
+      log('Unexpected Error: $e');
 
       return [];
     }
