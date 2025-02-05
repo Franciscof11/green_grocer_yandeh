@@ -82,7 +82,7 @@ Widget _categoryButton(String text, bool selected) {
         style: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w500,
-          color: selected ? Colors.white : darkTextColor,
+          color: selected ? Colors.white : primaryTextColor,
         ),
       ),
     ),
