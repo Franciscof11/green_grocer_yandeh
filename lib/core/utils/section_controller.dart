@@ -16,6 +16,7 @@ class SectionController {
     return ProductsBlock(
       bgColor: checkColor(section.title),
       title: section.title,
+      products: section.products,
     );
   }
 

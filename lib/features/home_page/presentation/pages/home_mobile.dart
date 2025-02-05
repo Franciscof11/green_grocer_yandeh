@@ -27,10 +27,6 @@ class HomeMobile extends StatelessWidget {
                 );
               }
               if (state is SectionDataState) {
-                print('###########');
-                state.sections.forEach(
-                  (element) => print(element.title),
-                );
                 return Expanded(
                   child: RefreshIndicator(
                     onRefresh: () =>

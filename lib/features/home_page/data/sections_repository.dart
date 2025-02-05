@@ -9,7 +9,11 @@ class SectionsRepository {
       final dio = Dio();
 
       final response = await dio.get(
-        'https://gateway-smartforce.yandeh.com.br/process/candidates/search-products?argument=*',
+        'https://gateway-smartforce.yandeh.com.br/process/candidates/search-products',
+        queryParameters: {
+          'argument': '*',
+          'original': true,
+        },
         options: Options(
           headers: {
             'token': '562db55d-58f3-407e-bd8e-c66b1af3fcad',

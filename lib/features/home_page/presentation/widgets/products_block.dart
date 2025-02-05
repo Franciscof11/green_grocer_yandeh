@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:green_grocer_yandeh/core/constants/const_colors.dart';
+import 'package:green_grocer_yandeh/features/home_page/domain/models/product_model.dart';
 import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/product_card.dart';
 
 class ProductsBlock extends StatelessWidget {
   final Color bgColor;
   final String title;
-  const ProductsBlock({super.key, required this.bgColor, required this.title});
+  final List<ProductModel> products;
+  const ProductsBlock({
+    super.key,
+    required this.bgColor,
+    required this.title,
+    required this.products,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,11 +58,14 @@ class ProductsBlock extends StatelessWidget {
             child: SizedBox(
               height: 450,
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: products.length,
+                shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: ProductCard(),
+                  child: ProductCard(
+                    product: products[index],
+                  ),
                 ),
               ),
             ),

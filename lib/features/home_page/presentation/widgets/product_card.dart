@@ -1,8 +1,12 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:green_grocer_yandeh/core/constants/const_colors.dart';
+import 'package:green_grocer_yandeh/features/home_page/domain/models/product_model.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final ProductModel product;
+  const ProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +44,13 @@ class ProductCard extends StatelessWidget {
                 ),
                 Center(
                   child: Image.asset(
-                    'assets/teste.png',
+                    Random().nextBool()
+                        ? 'assets/tomato.png'
+                        : 'assets/vagem.png',
                   ),
                 ),
                 Text(
-                  "R\$ 2,34 kg",
+                  "R\$ ${product.price}",
                   style: TextStyle(
                     color: secondaryTextColor,
                     fontSize: 20,
@@ -53,7 +59,9 @@ class ProductCard extends StatelessWidget {
                 ),
                 SizedBox(height: 4),
                 Text(
-                  'Tomate Vermelho Carmem Nacional 1',
+                  product.name,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
@@ -72,7 +80,7 @@ class ProductCard extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 1),
                     child: Center(
                       child: Text(
-                        '1 quilograma',
+                        '${product.unitContent} ${product.unitMessure}',
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w600,
@@ -84,7 +92,7 @@ class ProductCard extends StatelessWidget {
                 ),
                 SizedBox(height: 4),
                 Text(
-                  '04052176000490-003009',
+                  product.ean,
                   style: TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w400,
@@ -94,7 +102,7 @@ class ProductCard extends StatelessWidget {
                 SizedBox(height: 22),
                 Center(
                   child: Text(
-                    'Caixa c/ 20 kg',
+                    '${product.packageQuantity} ${product.package.toLowerCase()}',
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
