@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:green_grocer_yandeh/features/home_page/domain/models/section_model.dart';
 
 class SectionsRepository {
@@ -20,6 +21,15 @@ class SectionsRepository {
           },
         ),
       );
+
+      final cacheOptions = CacheOptions(
+        store: MemCacheStore(),
+        policy: CachePolicy.forceCache,
+        hitCacheOnErrorExcept: [401, 403],
+        maxStale: const Duration(minutes: 2),
+      );
+
+      dio.interceptors.add(DioCacheInterceptor(options: cacheOptions));
 
       final responseMap = response.data['sections'];
 
