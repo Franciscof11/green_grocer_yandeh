@@ -19,7 +19,7 @@ class SectionsRepository {
 
       final responseMap = response.data['sections'];
 
-      final sectionList = responseMap
+      final List<SectionModel> sectionList = responseMap
           .map<SectionModel>((section) => SectionModel.fromMap(section))
           .toList();
 

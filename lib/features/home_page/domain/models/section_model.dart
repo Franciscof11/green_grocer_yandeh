@@ -1,19 +1,19 @@
 import 'package:green_grocer_yandeh/features/home_page/domain/models/product_model.dart';
 
 class SectionModel {
-  final String section;
+  final String title;
   final String description;
   final List<ProductModel> products;
 
   SectionModel({
-    required this.section,
+    required this.title,
     required this.description,
     required this.products,
   });
 
   factory SectionModel.fromMap(Map<String, dynamic> map) {
     return SectionModel(
-      section: map['section'] ?? '',
+      title: map['section'] ?? '',
       description: map['description'] ?? '',
       products: map['products']
               .map<ProductModel>((product) => ProductModel.fromMap(product))
@@ -24,5 +24,5 @@ class SectionModel {
 
   @override
   String toString() =>
-      'SectionModel(section: $section, description: $description, products: $products)';
+      'SectionModel(section: $title, description: $description, products: $products)';
 }

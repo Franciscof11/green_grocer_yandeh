@@ -13,7 +13,7 @@ class SectionCubit extends Cubit<SectionState> {
       : _repository = repository,
         super(SectionInitialState());
 
-  Future<void> getAllCars() async {
+  Future<void> getAllSections() async {
     try {
       emit(SectionLoadingState());
 
