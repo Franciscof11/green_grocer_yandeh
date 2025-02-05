@@ -2,43 +2,52 @@ import 'package:flutter/material.dart';
 import 'package:green_grocer_yandeh/core/constants/const_colors.dart';
 
 class SeparatorBlock extends StatelessWidget {
-  const SeparatorBlock({super.key});
+  final bool isHortifruti;
+  const SeparatorBlock({super.key, required this.isHortifruti});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.only(right: 16, left: 16, bottom: 32),
       child: Stack(
         alignment: Alignment.center,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(40),
-            child: Image.asset('assets/separator_image.png'),
+            child: Image.asset(
+              isHortifruti
+                  ? 'assets/hortifruti.png'
+                  : 'assets/separator_image.png',
+            ),
           ),
           Column(
             children: [
               SizedBox(height: 8),
-              Container(
-                width: 172,
-                height: 36,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  color: separatorBlocOrange,
-                ),
-                child: Center(
-                  child: Text(
-                    'Queridinhos!',
-                    style: TextStyle(
-                      fontSize: 19,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
+              IntrinsicWidth(
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 4, horizontal: 32),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    color:
+                        isHortifruti ? hortfruitBgColor : separatorBlocOrange,
+                  ),
+                  child: Center(
+                    child: Text(
+                      isHortifruti ? 'Hortifruti Perfeito!' : 'Queridinhos!',
+                      style: TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
               ),
               SizedBox(height: 8),
               Text(
-                'Veja os produtos mais queridos\npelos nossos clientes.',
+                isHortifruti
+                    ? 'Veja opções fresquinhas para\n abastecer seu hortifruti.'
+                    : 'Veja os produtos mais queridos\npelos nossos clientes.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 12,
