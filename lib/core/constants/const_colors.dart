@@ -14,3 +14,4 @@ const tagBgBlueColor = Color.fromRGBO(229, 246, 255, 1);
 const separatorBlocOrange = Color.fromRGBO(254, 75, 2, 1);
 const hortfruitBgColor = Color.fromRGBO(114, 197, 50, 1);
 const discoverBgColor = Color.fromRGBO(53, 168, 143, 1);
+const headerSecondTextColor = Color.fromRGBO(70, 74, 76, 1);
