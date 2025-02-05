@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/mobile_header.dart';
+import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/sections_zone.dart';
 
 class HomeMobile extends StatelessWidget {
   const HomeMobile({super.key});
@@ -11,11 +12,8 @@ class HomeMobile extends StatelessWidget {
       body: Column(
         children: [
           MobileHeader(),
-          Expanded(
-            child: Image.asset(
-              'assets/yandeh_card.png',
-            ),
-          ),
+          SizedBox(height: 16),
+          SectionsZone(),
         ],
       ),
     );

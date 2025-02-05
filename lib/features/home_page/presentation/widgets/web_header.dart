@@ -27,7 +27,7 @@ class WebHeader extends StatelessWidget {
             children: [
               SizedBox(height: 8),
               Text(
-                'Mercadinho Maristela NO PCC PORRAAAA',
+                'Mercadinho Maristela NO PCC',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               Text(
