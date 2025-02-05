@@ -31,7 +31,7 @@ class SectionsZone extends StatelessWidget {
         if (isWeb)
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 250),
+              padding: const EdgeInsets.only(bottom: 220),
               child: Image.asset(
                 'assets/yandeh_white_logo.png',
                 fit: BoxFit.cover,

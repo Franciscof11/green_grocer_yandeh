@@ -3,7 +3,12 @@ import 'package:green_grocer_yandeh/core/constants/const_colors.dart';
 
 class SeparatorBlock extends StatelessWidget {
   final bool isHortifruti;
-  const SeparatorBlock({super.key, required this.isHortifruti});
+  final bool isWeb;
+  const SeparatorBlock({
+    super.key,
+    required this.isHortifruti,
+    this.isWeb = false,
+  });
 
   @override
   Widget build(BuildContext context) {

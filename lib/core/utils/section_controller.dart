@@ -5,15 +5,17 @@ import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/prod
 import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/separator_block.dart';
 
 class SectionController {
-  Widget checkSection(SectionModel section) {
+  Widget checkSection(SectionModel section, {bool isWeb = false}) {
     if (section.products.isEmpty) {
       bool isHortfruit = false;
       if (section.title == 'Hortifruti') isHortfruit = true;
       return SeparatorBlock(
         isHortifruti: isHortfruit,
+        isWeb: isWeb,
       );
     }
     return ProductsBlock(
+      isWeb: isWeb,
       bgColor: checkColor(section.title),
       title: section.title,
       products: section.products,

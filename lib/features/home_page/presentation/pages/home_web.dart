@@ -28,26 +28,24 @@ class HomeWeb extends StatelessWidget {
               }
               if (state is SectionDataState) {
                 return Expanded(
-                  child: RefreshIndicator(
-                    onRefresh: () =>
-                        context.read<SectionCubit>().getAllSections(),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          SizedBox(height: 16),
-                          SectionsZone(isWeb: true),
-                          SizedBox(height: 32),
-                          ListView.builder(
-                            itemCount: state.sections.length,
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            itemBuilder: (context, index) {
-                              final section = state.sections[index];
-                              return sectionController.checkSection(section);
-                            },
-                          ),
-                        ],
-                      ),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        SizedBox(height: 16),
+                        SectionsZone(isWeb: true),
+                        SizedBox(height: 32),
+                        ListView.builder(
+                          itemCount: state.sections.length,
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            final section = state.sections[index];
+                            return sectionController.checkSection(
+                              section,
+                              isWeb: true,
+                            );
+                          },
+                        ),
+                      ],
                     ),
                   ),
                 );
