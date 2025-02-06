@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:green_grocer_yandeh/core/constants/const_colors.dart';
 import 'package:green_grocer_yandeh/core/utils/section_controller.dart';
 import 'package:green_grocer_yandeh/features/home_page/presentation/cubit/section_cubit.dart';
 import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/mobile_header.dart';
 import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/sections_zone.dart';
+import 'package:green_grocer_yandeh/features/home_page/presentation/widgets/skeleton_widget.dart';
 
 class HomeMobile extends StatelessWidget {
   const HomeMobile({super.key});
@@ -19,7 +21,21 @@ class HomeMobile extends StatelessWidget {
           BlocBuilder<SectionCubit, SectionState>(
             builder: (context, state) {
               if (state is SectionLoadingState) {
-                return CircularProgressIndicator();
+                return Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        LinearProgressIndicator(
+                          color: redProductBlock,
+                          backgroundColor: Colors.grey[350],
+                        ),
+                        SkeletonWidget(
+                          isWeb: false,
+                        ),
+                      ],
+                    ),
+                  ),
+                );
               }
               if (state is SectionErrorState) {
                 return Center(
