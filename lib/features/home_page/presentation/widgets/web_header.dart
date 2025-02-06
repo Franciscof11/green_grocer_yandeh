@@ -98,7 +98,7 @@ class WebHeader extends StatelessWidget {
                     'Carrinho',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 17,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
