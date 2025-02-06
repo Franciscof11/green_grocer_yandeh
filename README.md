@@ -6,11 +6,12 @@
    <h2>Topics 📋</h2>
 
   <p>
-   
+      
    - [About 📖](#about-)
    - [Preview 📱](#preview-)
    - [Technologies Used 👨🏽‍💻](#---technologies-used----)
    - [How to Use 🤔](#how-to-use-)
+   - [Architecture](#architecture)
    </p>
 
    <h2>About 📖</h2>
@@ -46,6 +47,14 @@
 - **percent_indicator** -> Biblioteca de animações.
 - **cached_network_image** -> Biblioteca para mostrar imagens e mantê-las no diretório de cache do aparelho.
 
+---
+
+ ## Architecture
+
+  <p>
+Ao decidir a arquitetura para o projeto, optei por implementar a Clean Architecture, utilizando as camadas de Data, Domain e Presentation, pois ao meu ver combina com a utilização do Flutter Bloc como gerenciador de estado. Essa escolha foi guiada pela necessidade de estruturar o código de forma modular, escalável e de fácil manutenção. Nesse projeto, optei pela utilização das 3 camadas, onde: Data: Possui todos os arquivos de repositórios, os quais fazem requisições à serviços externos como a api disponibilizada. Domain: Contém o arquivo de modelagem dos dados das entidades. Também responsável pela serialização e desserialização dos objetos. Presentation: Camada responsável por armazenar toda a parte da UI do projeto, telas e arquivos bloc. 
+  </p>
+   
   
 ---
 
