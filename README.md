@@ -38,14 +38,9 @@
    
 - **bloc** -> Gerenciador de estado.
 - **dio** -> Pacote de rede para efetuar requisições http.
-- **freezed** -> Gerador de código para classes de estados e eventos do bloc.
-- **sqflite** -> Banco de dados SQL utilizado para realizar o cashe de dados na memória do aparelho.
-- **google_fonts** -> Utilização de fontes nativa do Google.
-- **flutter_launcher_icons** -> Customização e configuração do ícone do applicativo.
-- **flutter_native_splash** -> Criação da Splash Screen nativa do aplicativo.
-- **device_preview** -> Testes em diversos tamanhos de tela, para melhor responsividade para a aplicação.
-- **percent_indicator** -> Biblioteca de animações.
-- **cached_network_image** -> Biblioteca para mostrar imagens e mantê-las no diretório de cache do aparelho.
+- **dio_cache_interceptor** -> Interceptador de cache HTTP Dio com múltiplos armazenamentos.
+- **bloc_test** -> Biblioteca utilizada para testes unitários do bloc.
+- **mocktail** -> Pacote utilizado para criar mocks para os testes unitários do bloc.
 
 ---
 
