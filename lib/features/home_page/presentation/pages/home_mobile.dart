@@ -52,7 +52,6 @@ class HomeMobile extends StatelessWidget {
                         children: [
                           SizedBox(height: 16),
                           SectionsZone(),
-                          SizedBox(height: 32),
                           ListView.builder(
                             itemCount: state.sections.length,
                             shrinkWrap: true,
