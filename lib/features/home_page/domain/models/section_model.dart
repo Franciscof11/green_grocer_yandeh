@@ -22,6 +22,14 @@ class SectionModel {
     );
   }
 
+  factory SectionModel.empty() {
+    return SectionModel(
+      title: '',
+      description: '',
+      products: <ProductModel>[],
+    );
+  }
+
   @override
   String toString() =>
       'SectionModel(section: $title, description: $description, products: $products)';
